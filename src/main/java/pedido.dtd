@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT pedido (codigo.pedido, nombre.trabajador, fecha.pedido, observaciones.pedido?,
+ plazo.revision, articulos.pedidos)>
+<!ELEMENT articulos.pedidos (articulo+)>
+<!ELEMENT articulo (codigo.articulo, cantidad, precio, observaciones.articulo)>
+
+<!ELEMENT codigo.pedido (#PCDATA)>
+<!ELEMENT nombre.trabajador (#PCDATA)>
+<!ELEMENT fecha.pedido (#PCDATA)>
+<!ELEMENT observaciones.pedido (#PCDATA)>
+<!ELEMENT plazo.revision (#PCDATA)>
+<!--A "articulos.pedidos" y "articulo" no le he asignado (#PCDATA) porque no 
+contienen nada en su interior, excepto otras etiquetas ¿sería correcto?-->
+<!ELEMENT codigo.articulo (#PCDATA)>
+<!ELEMENT cantidad (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT observaciones.articulo (#PCDATA)>
+
+<!ATTLIST observaciones.pedido valor CDATA #REQUIRED>
+<!ATTLIST plazo.revision plazoFinal CDATA #REQUIRED>

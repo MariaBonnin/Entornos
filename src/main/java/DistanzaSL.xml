@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pedido SYSTEM "pedido.dtd">
+<pedido xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xsi:SchemaLocation= "newXmlSchema.xsd">
+    <codigo.pedido> A2587469 </codigo.pedido>
+    <nombre.trabajador>Pablo Pérez</nombre.trabajador>
+    <fecha.pedido>04/10/21</fecha.pedido>
+    <observaciones.pedido valor="urgente">Observacións sobre o pedido.</observaciones.pedido>
+
+    <plazo.revision plazoFinal="11/03/2021"> 30 días </plazo.revision>
+    <articulos.pedidos>
+        <articulo>
+            <codigo.articulo>LKM-241</codigo.articulo>
+            <cantidad> 25</cantidad>
+            <precio> Prezo de cada unidade.</precio>
+            <observaciones.articulo>observaciones</observaciones.articulo>
+
+        </articulo>
+
+    </articulos.pedidos>
+
+</pedido>
+
+

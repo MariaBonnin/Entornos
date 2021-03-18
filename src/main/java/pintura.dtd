@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT pinturas (pintura+)>
+<!-- puede haber tecnicas mixtas-->
+<!ELEMENT pintura (nombrePintor, tituloObra, tecnica+, superficie,buenEstadoConservacion, nombrePrestado)>
+<!ELEMENT nombrePintor (#PCDATA)>
+<!ELEMENT tituloObra (#PCDATA)>
+<!ELEMENT tecnica (#PCDATA)>
+<!ELEMENT superficie (#PCDATA)>
+<!ELEMENT buenEstadoConservacion (#PCDATA)>
+<!ELEMENT nombrePrestado (#PCDATA)>
+<!ATTLIST tituloObra codigoObra ID #REQUIRED>
+<!ATTLIST tituloObra fechaRealizacion NMTOKENS #REQUIRED>
+<!ATTLIST nombrePrestado fechaPrestamo NMTOKENS #REQUIRED>

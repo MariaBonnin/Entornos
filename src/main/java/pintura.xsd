@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    <xs:element name="pintura">
+
+		<!-- elementos simples -->
+
+		<xs:element name="nombrePintor" type="xs:NMTOKENS" />
+
+		<xs:element name="tecnica">
+			<xs:simpleType>
+				<xs:restriction base="xs:string ">
+					<xs:enumeration value="carboncillo" />
+					<xs:enumeration value="acrilico" />
+					<xs:enumeration value="tempera" />
+					<xs:enumeration value="oleo" />
+					<xs:enumeration value="acuarela" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+
+		<xs:element name="superficie">
+			<xs:simpleType>
+				<xs:restriction base="xs:string ">
+					<xs:enumeration value="papel" />
+					<xs:enumeration value="carton" />
+					<xs:enumeration value="tablilla entelada" />
+					<xs:enumeration value="lienzo" />
+					<xs:enumeration value="madera" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		<xs:element name="buenEstadoConservacion">
+			<xs:simpleType>
+				<xs:restriction base="xs:string ">
+					<xs:enumeration value="si|no" />
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:element>
+		
+		<!-- elementos con atributos -->
+		<xs:element name="tituloObra" type="xs:NMTOKENS">
+		<xs:complexType>
+         
+		<xs:attribute name= "codigoObra" type= "xs:positiveInteger"/>
+		<xs:attribute name= "fechaRealizacion" type= "xs:date"/>
+              
+		</xs:complexType>
+		</xs:element>
+		<xs:element name="nombrePrestado" type="xs:NMTOKENS ">
+		<xs:complexType>
+		<xs:attribute name= "fechaPrestamo" type= "xs:date"/>
+		</xs:complexType>
+		</xs:element>
+
+		<!-- atributos -->
+
+		<xs:attribute name="codigoObra" type="xs:positiveInteger"
+			use="required" />
+		<xs:attribute name="fechaRealizacion" type="xs:date"
+			use="required" />
+		<xs:attribute name="fechaPrestamo" type="xs:date"
+			use="required" />
+
+		<!-- elementos complejos -->
+
+
+		<xs:element name="pinturas">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="pintura" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+
+		<xs:element name="pintura">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element ref="nombrePintor" type="xs:string" />
+					<xs:element ref="tituloObra" type="xs:string" />
+					<xs:element ref="tecnica" type="xs:string" />
+					<xs:element ref="superficie" type="xs:string" />
+					<xs:element ref="buenEstadoConservacion"
+						type="xs:string" />
+					<xs:element name="nombrePrestado" type="xs:string" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:element>
+		
+
+	</xs:element>
+</xs:schema>
+
+

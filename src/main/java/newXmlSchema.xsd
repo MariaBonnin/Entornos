@@ -1,0 +1,102 @@
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="DistanzaSL">
+    
+    <!--elementos simples-->
+    <xs:element name="codigo.pedido" type="xs:string">
+        <xs:simpleType>
+            <xs:restriction base= "xs:string">
+                <xs:pattern value="[A-Z][0-9]{7}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="nombre.trabajador" type="xs:string"/>
+    <xs:element name="fecha.pedido" type="xs:string">
+        <xs:simpleType>
+            <xs:restriction base= "xs:string">
+                <xs:pattern value="[0-9]{2}\/[0-9]{2}\/[0-9]{4}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="observaciones.pedido" type="xs:string">
+        <xs:simpleType>
+            <xs:restriction base= "xs:string">
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="plazo.revision" type="xs:string"/>
+    
+    
+    <xs:element name="codigo.articulo" type="xs:string">
+        <xs:simpleType>
+            <xs:restriction base= "xs:string">
+                <xs:pattern value="[A-Z]{3}\-[0-9]{3}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="cantidad" type="xs:positiveInteger"/>
+    <xs:element name="precio" type="xs:double">
+                <xs:simpleType>
+                  <xs:restriction base="xs:double">
+                    <xs:minExclusive value="-1"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+    <xs:element name="observaciones.articulo" type="xs:string"/>
+    
+    <!--Atributos-->
+    
+    <xs:attribute name="valor" type= "xs:string" use= "required">
+        <xs:simpleType>
+            <xs:restriction base= "xs:string">
+                <xs:enumeration value="urgente" />
+                <xs:enumeration value="incompleto"/>
+            </xs:restriction>
+            </xs:simpleType>
+    </xs:attribute>
+
+    <xs:attribute name="plazoFinal" type= "xs:string">
+        <xs:simpleType>
+            <xs:restriction base= "xs:string">
+                <xs:pattern value="[0-9]{2}\\[0-9]{2}\\[0-9]{4}"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <!--Elementos complejos-->
+    
+    <xs:element name="pedido">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="codigo.pedido"/>
+                <xs:element ref="nombre.trabajador"/>
+                <xs:element ref="fecha.pedido"/>
+                <xs:element ref="observaciones.pedido" minOccurs= "0"/>
+                <xs:element ref="plazo.revision"/>
+                <xs:element ref="articulos.pedidos"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="articulos.pedidos">
+        <xs:complexType>
+             <xs:sequence>
+                <xs:element ref="articulo"/>
+                </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="articulo">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="codigo.articulo"/>
+                <xs:element ref="cantidad"/>
+                <xs:element ref="precio"/>
+                <xs:element ref="observaciones"/>
+                </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+     
+</xs:element>
+</xs:schema>

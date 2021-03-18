@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pinturas SYSTEM "pintura.dtd">
+<pinturas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:SchemaLocation= "pintura.xsd">
+<pintura>
+	<nombrePintor>Julio Méndez</nombrePintor>
+	<tituloObra codigoObra="4523657"
+		fechaRealizacion="2004-10-25">Tres gatos en un tejado</tituloObra>
+	<tecnica>carboncillo</tecnica>
+	<superficie>lienzo</superficie>
+	<buenEstadoConservacion>si</buenEstadoConservacion>
+	<nombrePrestado fechaPrestamo="2012-09-24">Alicia Gómez</nombrePrestado>
+</pintura>
+</pinturas>

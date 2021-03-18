@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE pedido SYSTEM "pedido.dtd">
+<pedido>
+    <codigo.pedido>formado por unha cadea de 8 caracteres dos cales o primeiro é unha letra.</codigo.pedido>
+    <nombre.trabajador>quien realiza el pedido</nombre.trabajador>
+    <fecha.pedido>fecha</fecha.pedido>
+    <observaciones.pedido valor="urgente">Observacións sobre o pedido, cuxos valores son, en caso de que exista o dato: urxente ou incompleto.</observaciones.pedido>
+    <plazo.revision plazoFinal="25/10/2021"> X días.   ?????Prazo de revisión dos produtos recibidos que será un intervalo de tempo expresado en días e dependerá do prezo final do pedido.</plazo.revision>
+    <articulos.pedidos>
+    <articulo>
+        <codigo.articulo>formado por tres letras maiúsculas e tres díxitos separados por un guión</codigo.articulo>
+        <cantidad> Número de unidades pedidas.</cantidad>
+        <precio> Prezo de cada unidade.</precio>
+        <observaciones.articulo>observaciones</observaciones.articulo>
+    </articulo>
+    
+    </articulos.pedidos>
+
+</pedido>
+
